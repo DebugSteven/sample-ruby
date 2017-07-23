@@ -30,9 +30,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
         
                                   }
       end
-      assert_select 'div.alert-success', flash[:success]
       follow_redirect!
       assert_template 'users/show'
+      assert_select 'div.alert-success', flash[:success]
     end
   end
 end
